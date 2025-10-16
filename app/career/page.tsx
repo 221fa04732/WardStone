@@ -1,5 +1,7 @@
+import Navbar from "@/components/component/navbar"
+
 export default function Career(){
-    return (<div className="min-h-screen min-w-full flex justify-center items-center text-2xl font-semibold">
-        Welcome to career page!
+    return(<div className="flex flex-col items-center justify-center min-h-screen min-w-full">
+        <Navbar />
     </div>)
 }
