@@ -32,13 +32,13 @@ export const Timeline = ({ data }: { data: CompanyOverviewType[] }) => {
     <div className="w-full flex justify-start items-center" ref={containerRef}>
       <div ref={ref} className="relative">
         {data.map((item, index) => (
-          <div key={index} className="flex justify-start pb-16">
+          <div key={index} className="flex justify-start pb-10">
             <div className="relative flex flex-col justify-start items-center z-20">
               <div className="h-6 absolute w-6 left-3 rounded-full bg-white flex items-center justify-center mt-6">
                 <div className="h-3 w-3 rounded-full bg-blue-500" />
               </div>
               <div className="relative left-16 flex flex-col md:flex-row items-start gap-6 mr-16">
-                <div className="w-80 h-64 flex-shrink-0">
+                <div className="w-full max-w-80 h-64 flex-shrink-0">
                   {item.type === 0 ? 
                     <Image src={item.url}  alt="item"  width={320} height={256} className="w-full h-full object-cover rounded-2xl"/> : <video autoPlay loop muted playsInline className="w-full h-full object-cover rounded-2xl"><source src={item.url} type="video/mp4" /></video>
                   }

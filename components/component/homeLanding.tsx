@@ -12,6 +12,6 @@ export default function HomeLanding(){
                 <div className="text-2xl md:text-6xl font-bold rubik text-center mt-6">Satellites for Missile<div>Defense</div></div>
             </div>
         </div>
-        <div className="w-10/12 md:w-[700px] absolute bottom-64 md:bottom-32 text-center md:text-sm text-xs pt-16">Wardstone is a space defense-tech company developing next-generation capabilities to protect the United States and its allies from missiles and other space-based threats. We design, build, and deploy satellites equipped with space-based interceptors to kinetically counter hypersonic and ballistic missiles.</div>
+        <div className="w-10/12 md:w-[700px] absolute bottom-32 text-center md:text-sm text-xs pt-16">Wardstone is a space defense-tech company developing next-generation capabilities to protect the United States and its allies from missiles and other space-based threats. We design, build, and deploy satellites equipped with space-based interceptors to kinetically counter hypersonic and ballistic missiles.</div>
     </div>)
 }
