@@ -23,7 +23,7 @@ const inter = Inter({
 
 
 export const metadata: Metadata = {
-    title: "Career | Wardstone",
+    title: "WARDSTONE - Career",
     description: "Next-generation Space Defense Technology",
 };
 
