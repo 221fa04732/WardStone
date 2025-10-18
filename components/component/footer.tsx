@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 export default function Footer(){
-    return(<div className="w-11/12 border-t border-[#272727] my-16">
+    return(<div className="w-11/12 border-t border-[#272727] my-6">
         <div className="border-b border-[#272727]">
             <div className='w-full grid grid-cols-12 md:gap-2 place-items-start gap-4 mt-16'>
                 <div className='col-span-12 md:col-span-4 rubik text-lg font-semibold'>We Build Space Defense <div>Technology</div></div>
