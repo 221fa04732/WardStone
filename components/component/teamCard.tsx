@@ -2,15 +2,12 @@ import Image from "next/image"
 import { teamInfoType } from "./teamOverview"
 import {
   Drawer,
-  DrawerClose,
   DrawerContent,
   DrawerDescription,
-  DrawerFooter,
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer"
-import { Button } from "../ui/button"
 
 export default function TeamCard({data} : {data : teamInfoType}){
     return(<div className="w-[300px] relative flex flex-col flex-wrap justify-center items-center gap-2 bg-[#090909] rounded-lg px-6">
@@ -21,7 +18,7 @@ export default function TeamCard({data} : {data : teamInfoType}){
         <div className="text-white/50 text-center">{data.designation}</div>
         <Drawer>
             <DrawerTrigger className="border border-blue-500 px-6 py-1.5 rounded-full my-6 cursor-pointer">learn more</DrawerTrigger>
-            <DrawerContent className="flex flex-col justify-center items-center border-t-blue-500">
+            <DrawerContent className="flex flex-col justify-center items-center border-t-blue-500 mb-10">
                 <div className="w-11/12 flex flex-col justify-center items-center gap-2">
                     <DrawerHeader className="flex flex-col justify-center items-center">
                         <Image src={data.url} alt="team" width={150} height={150} className="rounded-full" />
@@ -32,10 +29,7 @@ export default function TeamCard({data} : {data : teamInfoType}){
                             <a href={data.xURL} target='_blank' ><Image src={'/twitter.svg'} alt="discord" height={15} width={15} /></a>
                         </div>
                     </DrawerHeader>
-                    <div className="max-w-[900px] text-center text-sm">{data.about}</div>
-                    <DrawerFooter>
-                        <DrawerClose><Button variant="destructive">Close</Button></DrawerClose>
-                    </DrawerFooter>
+                    <div className="max-w-[900px] text-sm">{data.about}</div>
                 </div>
             </DrawerContent>
         </Drawer>
