@@ -9,7 +9,7 @@ export default function JobCard({data} : {data : jobType}){
         </div>
         <div className="w-full flex flex-col md:flex-row justify-center md:justify-between item-start md:items-center gap-2 text-white/50 pb-2">
             <div className="flex flex-wrap gap-x-6 gap-y-1">
-                {data.jobTags.map((item : any, index : any)=>(
+                {data.jobTags.map((item : string, index : number)=>(
                     <div key={index} className="flex justify-center items-center gap-1"><div className="min-h-2 min-w-2 max-h-2 max-w-2 rounded-full bg-blue-500"></div>{item}</div>
                 ))}
             </div>
