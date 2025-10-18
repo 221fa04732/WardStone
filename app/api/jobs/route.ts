@@ -1,6 +1,5 @@
 import { NextResponse, NextRequest } from "next/server";
 import prisma from "@/lib/prisma";
-import { message } from "telegraf/filters";
 
 export async function GET(){
     const jobs = await prisma.jobs.findMany()
