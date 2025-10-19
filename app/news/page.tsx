@@ -1,11 +1,13 @@
 import Footer from "@/components/component/footer"
 import Navbar from "@/components/component/navbar"
 import NewsLanding from "@/components/component/newsLanding"
+import NewsPost from "@/components/component/newsPost"
 
 export default function News(){
 return(<div className="flex flex-col items-center justify-center min-h-screen min-w-full">
         <Navbar />
         <NewsLanding />
+        <NewsPost />
         <Footer />
     </div>)
 }

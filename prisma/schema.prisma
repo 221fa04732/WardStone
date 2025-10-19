@@ -15,3 +15,12 @@ model Jobs{
   jobTags String[]
   jobPostedDate DateTime @default(now())
 }
+
+model News{
+  id String @id @default(ulid())
+  newsTitle String
+  newsDescription String
+  newsAuthor String
+  newsAuthorDesignation String
+  newsPostedDate DateTime @default(now())
+}
