@@ -11,7 +11,7 @@ export type jobType = {
 
 export default async function JobPost(){
     const jobs : jobType[] = await prisma.jobs.findMany() 
-    return(<div id="open-role" className="w-11/12 flex flex-col justify-center items-start gap-16 my-16">
+    return(<div id="open-role" className="w-11/12 flex flex-col justify-center items-start gap-16 py-16">
         <div className="rubik text-xl md:text-3xl font-semibold border-b">Open positions</div>
         <div className="w-full flex flex-col justify-center items-start gap-10">
             {jobs.map((item : jobType, index : number)=>(
