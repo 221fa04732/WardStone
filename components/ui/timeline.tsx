@@ -32,20 +32,29 @@ export const Timeline = ({ data }: { data: CompanyOverviewType[] }) => {
     <div className="w-full flex justify-start items-center" ref={containerRef}>
       <div ref={ref} className="relative">
         {data.map((item, index) => (
-          <div key={index} className="flex justify-start pb-10">
-            <div className="relative flex flex-col justify-start items-center z-20">
-              <div className="h-6 absolute w-6 left-3 rounded-full bg-white flex items-center justify-center mt-6">
-                <div className="h-3 w-3 rounded-full bg-blue-500" />
-              </div>
-              <div className="relative left-16 flex flex-col md:flex-row items-start gap-6 mr-16">
-                <div className="w-full max-w-80 h-64 flex-shrink-0">
-                  {item.type === 0 ? 
-                    <Image src={item.url}  alt="item"  width={320} height={256} className="w-full h-full object-cover rounded-2xl"/> : <video autoPlay loop muted playsInline className="w-full h-full object-cover rounded-2xl"><source src={item.url} type="video/mp4" /></video>
-                  }
+          <div key={index} className="flex justify-start pb-16">
+            <div className="relative flex justify-start items-start z-20">
+              <div className="flex-shrink-0 w-12 flex justify-center">
+                <div className="h-6 w-6 rounded-full bg-white flex items-center justify-center mt-6 z-30 relative">
+                  <div className="h-3 w-3 rounded-full bg-blue-500" />
                 </div>
-                <div className="flex flex-col justify-center items-start gap-2 md:gap-6 h-full">
-                  <div className="rubik text-xl font-semibold transition-all duration-300">{item.title}</div>
-                  <div className="text-white/50 transition-all duration-300">{item.description}</div>
+              </div>
+              <div className="flex-1 pl-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                  <div className="relative w-full">
+                    <div className="aspect-video rounded-xl overflow-hidden bg-neutral-800/50">
+                      {item.type === 1 ? (
+                        <video autoPlay loop muted playsInline className="w-full h-full object-cover">
+                          <source src={item.url} type="video/mp4" />
+                        </video>):(
+                        <Image  src={item.url}  alt={item.title} width={600} height={400} className="w-full h-full object-cover"/>
+                      )}
+                    </div>
+                  </div>
+                  <div className="flex flex-col justify-center space-y-4 h-full">
+                    <h3 className="rubik text-2xl font-semibold text-white transition-all duration-300">{item.title}</h3>
+                    <p className="text-white/70 leading-relaxed text-lg transition-all duration-300">{item.description}</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -55,14 +64,14 @@ export const Timeline = ({ data }: { data: CompanyOverviewType[] }) => {
           style={{
             height: height + "px",
           }}
-          className="absolute left-6 top-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-200 dark:via-neutral-700 to-transparent to-[99%]  [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] "
+          className="absolute left-6 top-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-200 dark:via-neutral-700 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
         >
           <motion.div
             style={{
               height: heightTransform,
               opacity: opacityTransform,
             }}
-            className="absolute inset-x-0 top-0  w-[4px] bg-gradient-to-t from-purple-500 via-blue-500 to-transparent from-[0%] via-[10%] rounded-full"
+            className="absolute inset-x-0 top-0 w-[4px] bg-gradient-to-t from-purple-500 via-blue-500 to-transparent from-[0%] via-[10%] rounded-full"
           />
         </div>
       </div>
