@@ -13,5 +13,7 @@ export default function HomeLanding(){
             </div>
         </div>
         <div className="w-10/12 md:w-[700px] absolute bottom-32 text-center md:text-sm text-xs pt-16">Wardstone is a space defense-tech company developing next-generation capabilities to protect the United States and its allies from missiles and other space-based threats. We design, build, and deploy satellites equipped with space-based interceptors to kinetically counter hypersonic and ballistic missiles.</div>
+        <div className={`absolute bg-sky-400 blur-3xl opacity-20 h-[300px] w-[300px] md:block hidden rounded-full z-10 -left-[150px] -bottom-[150px]`}></div>
+        <div className={`absolute bg-sky-400 blur-3xl opacity-20 h-[300px] w-[300px] md:block hidden rounded-full z-10 -right-[150px] -bottom-[150px]`}></div>
     </div>)
 }
