@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export default function MissionLanding(){
     return(<div className="relative flex justify-center items-center w-full h-[500px]">
-        <Image src={'/flag.png'} alt="home" fill className="object-cover opacity-25"/>
+        <Image src={'/flag.jpg'} alt="home" fill className="object-cover opacity-50"/>
         <div className="absolute h-full w-full flex flex-col items-center justify-center">
             <div className="w-10/12 flex flex-col items-center justify-center">
                 <div className="mb-16 rubik text-2xl md:text-6xl font-semibold md:font-bold">Our Mission</div>
