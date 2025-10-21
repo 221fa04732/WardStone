@@ -3,7 +3,7 @@ import prisma from "@/lib/prisma";
 
 export async function GET(req: NextRequest, {params} : { params: { id: string } }) {
 
-    const { id } =await params;
+    const { id } = params;
     const job = await prisma.jobs.findUnique({
         where : {
             id : id
