@@ -38,11 +38,11 @@ export default function JobDetailPage(){
     },[])
 
     if(loading){
-        return(<Loading data={"Please wait! Fetching job details"} height='mih-h-screen'/>)
+        return(<Loading data={"Please wait! Fetching job details"} height='min-h-screen'/>)
     }
 
     if(error){
-        return(<Error data={"Job not found, Please retry!"} height='mih-h-screen'/>)
+        return(<Error data={"Job not found, Please retry!"} height='min-h-screen'/>)
     }
 
     return(<div className='relative overflow-hidden w-full min-h-screen flex flex-col justify-start items-center'>
