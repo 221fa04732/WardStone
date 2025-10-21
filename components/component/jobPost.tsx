@@ -4,7 +4,7 @@ import JobCard from "./jobCard"
 export type jobType = {
     id : string,
     jobTitle: string,
-    jobDescription: string,
+    jobDescription: string[],
     jobTags: string[],
     jobPostedDate: any
 }

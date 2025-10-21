@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { jobType } from "./jobPost"
 import time from "@/lib/time"
 
@@ -13,7 +14,7 @@ export default function JobCard({data} : {data : jobType}){
                     <div key={index} className="flex justify-center items-center gap-1"><div className="min-h-2 min-w-2 max-h-2 max-w-2 rounded-full bg-blue-500"></div>{item}</div>
                 ))}
             </div>
-            <button className="bg-blue-500 text-white py-1 px-4 rounded-full max-w-32">apply now</button>
+            <Link href={`/career/${data.id}`} className="bg-blue-500 text-white py-1 px-4 rounded-full max-w-32">apply now</Link>
         </div>
     </div>)
 }
