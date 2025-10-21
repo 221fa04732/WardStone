@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import axios from 'axios'
 import { Spinner } from "../ui/spinner";
+import { toast } from 'sonner'
 
 export default function ApplyJob({ id, jobTitle}: { id?: string , jobTitle? : string}){
 
@@ -21,10 +22,18 @@ export default function ApplyJob({ id, jobTitle}: { id?: string , jobTitle? : st
                     "Content-Type" : "multipart/form-data"
                 }
             })
-            alert(response.data.message);
+            if(response){
+                if(response.status!=200){
+                    toast.warning(response.data.message)
+                    return;
+                }
+                toast.success(response.data.message)
+                return;
+            }
         }
         catch(e){
-            alert("Something went wrong. Please try again!");
+            toast.error("Server Error")
+            return;
         } 
         finally{
             setLoading(false);
