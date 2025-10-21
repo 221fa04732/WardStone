@@ -17,6 +17,6 @@ export default function JobDetail({ job }: { job: jobType | null }){
                 <div key={index} className="text-white/50 flex gap-2 pb-1"><div className="min-h-1 max-h-1 min-w-1 max-w-1 bg-white/50 rounded-full mt-3"></div>{item}</div>))) : (<p className="text-white/50">No description available.</p>
             )}
         </div>
-        <ApplyJob id={job?.id} />
+        <ApplyJob id={job?.id} jobTitle={job?.jobTitle} />
     </div>
 )}
