@@ -14,7 +14,7 @@ export default function JobDetail({ job }: { job: jobType | null }){
         <div className="w-full mb-12">
             <h2 className="text-xl font-semibold text-white mb-2">About the Role</h2>
             {job?.jobDescription && job.jobDescription.length > 0 ? (job.jobDescription.map((item: string, index: number)=> (
-                <p key={index} className="text-white/50 flex gap-2 pb-1"><div className="min-h-1 max-h-1 min-w-1 max-w-1 bg-white/50 rounded-full mt-3"></div>{item}</p>))) : (<p className="text-white/50">No description available.</p>
+                <div key={index} className="text-white/50 flex gap-2 pb-1"><div className="min-h-1 max-h-1 min-w-1 max-w-1 bg-white/50 rounded-full mt-3"></div>{item}</div>))) : (<p className="text-white/50">No description available.</p>
             )}
         </div>
         <ApplyJob id={job?.id} />
