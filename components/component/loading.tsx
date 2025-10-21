@@ -1,7 +1,7 @@
 import { Spinner } from "../ui/spinner"
 
-export default function Loading({data} : {data : string}){
-    return(<div className="min-h-screen w-full flex justify-center items-center">
+export default function Loading({data, height} : {data : string, height : string}){
+    return(<div className={`${height} w-full flex justify-center items-center`}>
         <div className="w-11/12 flex flex-col justify-center items-center gap-2">
             <div className="text-center">{data}</div>
             <Spinner className="size-6 text-blue-500" />
