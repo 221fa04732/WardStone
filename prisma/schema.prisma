@@ -11,7 +11,7 @@ datasource db {
 model Jobs{
   id String @id @default(uuid())
   jobTitle String
-  jobDescription String
+  jobDescription String[]
   jobTags String[]
   jobPostedDate DateTime @default(now())
 }
