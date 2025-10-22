@@ -38,18 +38,24 @@ export default function SendMessage(){
     };
 
     return(<form onSubmit={sendMessage} className="w-full flex flex-col justify-center items-center">
-        <div className="w-full flex flex-col justify-center items-start gap-4">
+        <div className="w-full flex flex-col justify-center items-start gap-2 text-sm">
+            <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-2">
+                <label className="w-full text-gray-300">
+                    <span className="block mb-1">Name<span className="text-red-600">*</span></span>
+                    <input type="text" name="name" placeholder="your name" required className="w-full px-2 py-1 bg-gray-800/60 text-gray-200 border border-gray-700 rounded-sm focus:outline-none focus:ring-1 focus:ring-blue-500 placeholder-gray-400"/>
+                </label>
+                <label className="w-full text-gray-300">
+                    <span className="block mb-1">Email<span className="text-red-600">*</span></span>
+                    <input type="email" name="email" placeholder="you@example.com" required className="w-full px-2 py-1 bg-gray-800/60 text-gray-200 border border-gray-700 rounded-sm focus:outline-none focus:ring-1 focus:ring-blue-500 placeholder-gray-400"/>
+                </label>
+            </div>
             <label className="w-full text-gray-300">
-                <span className="block mb-1 font-medium">Your Name<span className="text-red-600">*</span></span>
-                <input type="name" name="name" placeholder="example" required className="w-full px-2 py-1 bg-gray-800/60 text-gray-200 border border-gray-700 rounded-sm focus:outline-none focus:ring-1 focus:ring-blue-500 placeholder-gray-400"/>
+                <span className="block mb-1">Title/Subject<span className="text-red-600">*</span></span>
+                <input type="text" name="title" placeholder="What’s this about?" required className="w-full px-2 py-1 bg-gray-800/60 text-gray-200 border border-gray-700 rounded-sm focus:outline-none focus:ring-1 focus:ring-blue-500 placeholder-gray-400"/>
             </label>
             <label className="w-full text-gray-300">
-                <span className="block mb-1 font-medium">Your Email<span className="text-red-600">*</span></span>
-                <input type="email" name="email" placeholder="you@example.com" required className="w-full px-2 py-1 bg-gray-800/60 text-gray-200 border border-gray-700 rounded-sm focus:outline-none focus:ring-1 focus:ring-blue-500 placeholder-gray-400"/>
-            </label>
-            <label className="w-full text-gray-300">
-                <span className="block mb-1 font-medium">Your Message<span className="text-red-600">*</span></span>
-                <textarea name="message" placeholder="Write something about yourself..." required className="w-full h-36 bg-gray-800/60 text-gray-200 border border-gray-700 rounded-sm p-2 focus:outline-none focus:ring-1 focus:ring-blue-500 resize-none placeholder-gray-400" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}/>
+                <span className="block mb-1">Message<span className="text-red-600">*</span></span>
+                <textarea name="message" placeholder="Write something about it..." required className="w-full h-36 bg-gray-800/60 text-gray-200 border border-gray-700 rounded-sm p-2 focus:outline-none focus:ring-1 focus:ring-blue-500 resize-none placeholder-gray-400" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}/>
             </label>
         </div>
         <DrawerFooter className="w-full flex flex-row justify-center items-center gap-2">

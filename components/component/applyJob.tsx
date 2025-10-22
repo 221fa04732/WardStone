@@ -44,7 +44,7 @@ export default function ApplyJob({ id, jobTitle}: { id?: string , jobTitle? : st
         <h2 className="text-2xl font-semibold text-white mb-2">Apply for this Job</h2>
         <label className="w-full text-gray-300">
             <span className="block mb-2 font-medium">Your Name<span className="text-red-600">*</span></span>
-            <input type="name" name="name" placeholder="example" required className="w-full p-2 bg-gray-800/60 text-gray-200 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400"/>
+            <input type="text" name="name" placeholder="example" required className="w-full p-2 bg-gray-800/60 text-gray-200 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400"/>
         </label>
         <label className="w-full text-gray-300">
             <span className="block mb-2 font-medium">Your Email<span className="text-red-600">*</span></span>

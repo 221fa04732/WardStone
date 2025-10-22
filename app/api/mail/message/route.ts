@@ -6,6 +6,7 @@ export async function POST(req : NextRequest){
         const formData = await req.formData();
         const name = formData.get("name") as string;
         const email = formData.get("email") as string;
+        const title = formData.get("title") as string;
         const message = formData.get("message") as string;
 
         if(!name || !email || !message){
@@ -27,7 +28,7 @@ export async function POST(req : NextRequest){
         const mailOptions = {
             from: email,
             to: process.env.MY_EMAIL,
-            subject: `New message from ${name}`,
+            subject: `${title}`,
             text: `Name : ${name}\nEmail : ${email}\n\n${message}`,
         };
 

@@ -4,6 +4,7 @@ import {
   DrawerTrigger,
   DrawerHeader,
   DrawerTitle,
+  DrawerDescription,
 } from "@/components/ui/drawer"
 import SendMessage from "./sendMessage"
 
@@ -16,6 +17,7 @@ export default function ContactUs(){
                     <DrawerContent className="w-full flex justify-center items-center ">
                         <DrawerHeader>
                         <DrawerTitle>Let’s grow together!</DrawerTitle>
+                        <DrawerDescription></DrawerDescription>
                     </DrawerHeader>
                     <div className="w-11/12 flex justify-center items-center">
                         <SendMessage />
