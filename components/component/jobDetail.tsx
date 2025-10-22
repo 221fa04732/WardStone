@@ -2,7 +2,7 @@ import ApplyJob from "./applyJob";
 import { jobType } from "./jobPost";
 
 export default function JobDetail({ job }: { job: jobType | null }){
-    return(<div className="w-11/12 flex flex-col justify-start items-start mt-32 mb-16 text-gray-100">
+    return(<div className="w-11/12 flex flex-col justify-start items-start mt-16 md:mt-32 mb-16 text-gray-100">
         <h1 className="text-4xl font-bold tracking-tight text-white flex gap-1 pb-4"><div className="min-h-3 max-h-3 min-w-3 max-w-3 bg-green-600 rounded-full mt-3.5"></div>{job?.jobTitle}</h1>
         {job?.jobTags && job.jobTags.length > 0 && (
             <div className="flex flex-wrap gap-2 mb-10">
