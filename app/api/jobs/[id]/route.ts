@@ -2,21 +2,25 @@ import { NextResponse, NextRequest } from "next/server";
 import prisma from "@/lib/prisma";
 
 export async function GET(req : NextRequest, context: { params: Promise<{ id: string }> }) {
-
-    const  { id }  = await context.params;
-    const job = await prisma.jobs.findUnique({
-        where : {
-            id
+    try{
+        const  { id }  = await context.params;
+        const job = await prisma.jobs.findUnique({
+            where : {
+                id
+            }
+        })
+        if(job){
+            return NextResponse.json({ 
+                job : job
+            });
         }
-    })
-    if(!job){
+    }
+    catch(e){
         return NextResponse.json({ 
-            error: "Job not found" 
+            success: false,
+            message : "Failed to fetch job"
         },{ 
-            status: 404 
+            status: 500 
         });
     }
-    return NextResponse.json({ 
-        job : job
-    });
 }
