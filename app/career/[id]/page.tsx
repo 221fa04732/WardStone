@@ -42,7 +42,7 @@ export default function JobDetailPage(){
     }
 
     if(error){
-        return(<Error data={"Job not found, Please retry!"} height='min-h-screen'/>)
+        return(<Error data={"Job not found, Please retry!"} height='min-h-screen' fn={fetchJob}/>)
     }
 
     return(<div className='relative overflow-hidden w-full min-h-screen flex flex-col justify-start items-center'>

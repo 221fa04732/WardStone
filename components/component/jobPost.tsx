@@ -49,7 +49,7 @@ export default function JobPost(){
     if(error){
         return(<div className="w-11/12 flex flex-col justify-center items-start gap-16 py-16">
             <div className="rubik text-xl md:text-3xl font-semibold border-b">Open positions</div>
-            <Error data={"Error while finding jobs, Please retry!"} height="h-32"/>
+            <Error data={"Error while finding jobs, Please retry!"} height="h-32" fn={fetchJobs}/>
         </div>
     )}
 
