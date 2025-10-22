@@ -40,19 +40,21 @@ export default function ApplyJob({ id, jobTitle}: { id?: string , jobTitle? : st
         }
     };
 
-    return(<form onSubmit={sendMail} className="w-full flex flex-col justify-center items-start gap-6 bg-gray-900/40 md:p-6 p-2 rounded-xl border border-white/10 shadow-md">
+    return(<form onSubmit={sendMail} className="w-full flex flex-col justify-center items-start gap-4 bg-gray-900/40 md:p-6 p-2 rounded-xl border border-white/10 shadow-md text-sm">
         <h2 className="text-2xl font-semibold text-white mb-2">Apply for this Job</h2>
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
+            <label className="w-full text-gray-300">
+                <span className="block mb-1 font-medium">Name<span className="text-red-600">*</span></span>
+                <input type="text" name="name" placeholder="your name" required className="w-full p-2 bg-gray-800/60 text-gray-200 border border-gray-700 rounded-sm focus:outline-none focus:ring-1 focus:ring-blue-500 placeholder-gray-400"/>
+            </label>
+            <label className="w-full text-gray-300">
+                <span className="block mb-1 font-medium">Email<span className="text-red-600">*</span></span>
+                <input type="email" name="email" placeholder="you@example.com" required className="w-full p-2 bg-gray-800/60 text-gray-200 border border-gray-700 rounded-sm focus:outline-none focus:ring-1 focus:ring-blue-500 placeholder-gray-400"/>
+            </label>
+        </div>
         <label className="w-full text-gray-300">
-            <span className="block mb-2 font-medium">Your Name<span className="text-red-600">*</span></span>
-            <input type="text" name="name" placeholder="example" required className="w-full p-2 bg-gray-800/60 text-gray-200 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400"/>
-        </label>
-        <label className="w-full text-gray-300">
-            <span className="block mb-2 font-medium">Your Email<span className="text-red-600">*</span></span>
-            <input type="email" name="email" placeholder="you@example.com" required className="w-full p-2 bg-gray-800/60 text-gray-200 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400"/>
-        </label>
-        <label className="w-full text-gray-300">
-            <span className="block mb-2 font-medium">Your Message<span className="text-red-600">*</span></span>
-            <textarea name="message" placeholder="Write something about yourself..." required className="w-full h-64 bg-gray-800/60 text-gray-200 border border-gray-700 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none placeholder-gray-400" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}/>
+            <span className="block mb-1 font-medium">Message<span className="text-red-600">*</span></span>
+            <textarea name="message" placeholder="Write something about yourself..." required className="w-full h-64 bg-gray-800/60 text-gray-200 border border-gray-700 rounded-sm p-2 focus:outline-none focus:ring-1 focus:ring-blue-500 resize-none placeholder-gray-400" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}/>
         </label>
         <label className="w-full text-gray-300">
             <span className="block mb-2 font-medium">
