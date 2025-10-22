@@ -43,7 +43,7 @@ export default function NewsPost(){
 
     if(loading){return(<Loading data={"Please wait! Fetching all news"} height="h-96"/>)}
 
-    if(!error){return(<Error data={"Error while finding news, Please retry!"} height="h-96" fn={fetchNews}/>)}
+    if(error){return(<Error data={"Error while finding news, Please retry!"} height="h-96" fn={fetchNews}/>)}
     
     return(<div className="relative w-full flex flex-col justify-center items-center gap-4 my-16">
         {news && news.length > 0 ? news.map((item : newsType, index : number)=>(
