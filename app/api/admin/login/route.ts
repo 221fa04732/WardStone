@@ -8,6 +8,8 @@ export async function POST(req : NextRequest){
             return NextResponse.json({
                 success : false,
                 message : "Missing credentials"
+            },{
+                status : 201
             })
         }
 
@@ -15,6 +17,8 @@ export async function POST(req : NextRequest){
             return NextResponse.json({
                 success : false,
                 message : "Wrong credentials"
+            },{
+                status : 201
             })
         }
 
