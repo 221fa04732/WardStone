@@ -45,10 +45,9 @@ export default function NewsPost(){
 
     if(error){return(<Error data={"Error while finding news, Please retry!"} height="h-96" fn={fetchNews}/>)}
     
-    return(<div className="relative w-full flex flex-col justify-center items-center gap-4 my-16">
+    return(<div className="w-full flex flex-col justify-center items-center gap-6 my-16">
         {news && news.length > 0 ? news.map((item : newsType, index : number)=>(
             <NewsCard key={index} data={item}/>
         )) : <div className="w-full h-64 flex justify-center items-center">No news at the moment. Stay tuned!</div>}
-        <div className={`absolute bg-sky-400 blur-3xl opacity-20 h-[300px] w-[300px] rounded-full -z-10`}></div>
     </div>)
 }
