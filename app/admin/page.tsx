@@ -13,8 +13,11 @@ export default function Admin(){
             const response = await axios.get("/api/admin/logout",{ 
                 withCredentials: true 
             });
-            window.location.href = "/admin";
+            setTimeout(()=>{
+                window.location.href = "/admin";
+            },1000)
             toast.success(response.data.message)
+            return;
         } 
         catch(e){
             toast.success("Failed to logout")
