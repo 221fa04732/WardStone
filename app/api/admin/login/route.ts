@@ -1,0 +1,36 @@
+import { NextRequest, NextResponse } from "next/server";
+import jwt from "jsonwebtoken"
+
+export async function POST(req : NextRequest){
+    try{
+        const data =await req.json();
+        if(!data.secret || !data.password){
+            return NextResponse.json({
+                success : false,
+                message : "Missing credentials"
+            })
+        }
+
+        if(data.secret != process.env.ADMIN_SECRET || data.password != process.env.ADMIN_PASSWORD){
+            return NextResponse.json({
+                success : false,
+                message : "Wrong credentials"
+            })
+        }
+
+        const token = jwt.sign({ password : data.password, secret : data.secret }, process.env.JWT_SECRET as string)
+        return NextResponse.json({
+            success : true,
+            message : "Login successful",
+            token : token
+        })
+    }
+    catch(e){
+        return NextResponse.json({ 
+            success: false, 
+            message: "Failed to login" 
+        },{ 
+            status: 500 
+        });
+    }
+}
