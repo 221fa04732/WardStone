@@ -19,11 +19,19 @@ export async function POST(req : NextRequest){
         }
 
         const token = jwt.sign({ password : data.password, secret : data.secret }, process.env.JWT_SECRET as string)
-        return NextResponse.json({
+        const response = NextResponse.json({
             success : true,
             message : "Login successful",
-            token : token
         })
+        response.cookies.set({
+            name : "token",
+            value : token,
+            httpOnly : true,
+            secure : process.env.NODE_ENV === "production",
+            sameSite : "strict",
+            path : '/'
+        })
+        return response;
     }
     catch(e){
         return NextResponse.json({ 
