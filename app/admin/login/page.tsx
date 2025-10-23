@@ -24,7 +24,6 @@ export default function AdminLogin(){
                     toast.warning(response.data.message)
                     return;
                 }
-                localStorage.setItem("token", response.data.token)
                 toast.success(response.data.message)
                 return;
             }
