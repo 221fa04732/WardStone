@@ -5,9 +5,11 @@ import { Spinner } from "@/components/ui/spinner"
 import { useState } from "react"
 import axios from "axios"
 import { toast } from "sonner"
+import { useRouter } from "next/navigation"
 
 export default function AdminLogin(){
 
+    const route = useRouter()
     const [loading, setLoading] = useState(false)
     const [password, setPassword] = useState<string>("")
     const [secret, setSecret] = useState<string>("")
@@ -25,6 +27,7 @@ export default function AdminLogin(){
                     return;
                 }
                 toast.success(response.data.message)
+                route.push('/admin')
                 return;
             }
         }
