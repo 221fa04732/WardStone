@@ -13,7 +13,7 @@ export async function POST(req : NextRequest){
             return NextResponse.json({ 
                 message: "Missing data fields" 
             },{ 
-                status: 400 
+                status: 201
             });
         }
 
