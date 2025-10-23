@@ -43,11 +43,11 @@ export default function AdminLogin(){
         <div className="flex justify-center items-center">
             <div className="w-11/12 flex flex-col justify-center items-center gap-6">
                 <Image src={'/icon.png'} alt="icon" width={100} height={100} className="md:max-h-10 md:max-w-10 max-h-6 max-w-6"/>
-                <label className="w-full text-gray-300">
+                <label className="w-full max-w-96 text-gray-300">
                     <span className="block mb-1 font-medium">Admin Password<span className="text-red-600">*</span></span>
                     <input type="password" name="password" value={password} required className="w-full p-2 bg-gray-800/60 text-gray-200 border border-gray-700 rounded-sm focus:outline-none focus:ring-1 focus:ring-blue-500 placeholder-gray-400" onChange={(e)=>{setPassword(e.target.value)}}/>
                 </label>
-                <label className="w-full text-gray-300">
+                <label className="w-full max-w-96 text-gray-300">
                     <span className="block mb-1 font-medium">Admin Secret<span className="text-red-600">*</span></span>
                     <input type="password" name="secret" value={secret} required className="w-full p-2 bg-gray-800/60 text-gray-200 border border-gray-700 rounded-sm focus:outline-none focus:ring-1 focus:ring-blue-500 placeholder-gray-400" onChange={(e)=>{setSecret(e.target.value)}}/>
                 </label>
