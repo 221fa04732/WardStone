@@ -27,7 +27,7 @@ export default function AdminLogin(){
                     return;
                 }
                 toast.success(response.data.message)
-                route.push('/admin')
+                window.location.href = "/admin";
                 return;
             }
         }

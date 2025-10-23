@@ -13,8 +13,8 @@ export default function Admin(){
             const response = await axios.get("/api/admin/logout",{ 
                 withCredentials: true 
             });
+            window.location.href = "/admin";
             toast.success(response.data.message)
-            router.push("/admin");
         } 
         catch(e){
             toast.success("Failed to logout")
