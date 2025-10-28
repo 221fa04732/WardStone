@@ -4,7 +4,7 @@ import Link from "next/link";
 import axios from "axios";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
-import { ArrowRight, LogOut } from "lucide-react";
+import { ArrowRight, LogOut, House } from "lucide-react";
 
 export default function Admin(){
     const router = useRouter();
@@ -26,6 +26,7 @@ export default function Admin(){
 
     return (<div className="min-h-screen flex flex-col justify-center items-center bg-[#00091a] text-white px-6 py-12 relative">
         <button onClick={handleLogout} className="absolute top-8 right-8 bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-2 transition-all cursor-pointer"><LogOut size={16} />Logout</button>
+        <Link className="absolute top-8 right-38 bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-2 transition-all cursor-pointer" href={'/'}><House size={16} />Return to home</Link>
         <h1 className="text-4xl md:text-5xl font-bold mb-12 text-center tracking-wide">Admin Control Center</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-3xl">
             <Link href="/admin/new-news" className="group bg-[#00152f] p-8 rounded-2xl border border-blue-900 shadow-lg hover:bg-[#00204a] hover:shadow-blue-700/30 transition-all duration-300 flex justify-between items-center">
