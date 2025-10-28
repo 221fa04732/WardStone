@@ -2,7 +2,7 @@ import { newsType } from "./newsPost";
 import time from "@/lib/time";
 
 export default function NewsDisplay({ news }: { news: newsType | null }) {
-    return (<article className="bg-transparent text-gray-200 leading-relaxed">
+    return (<article className="w-full bg-transparent text-gray-200 leading-relaxed">
         <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">{news?.newsTitle}</h1>
         <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400 mb-8">
             <span className="font-medium text-gray-300">{news?.newsAuthor}</span>
