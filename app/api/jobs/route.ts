@@ -3,7 +3,11 @@ import prisma from "@/lib/prisma";
 
 export async function GET(){
     try{
-        const jobs = await prisma.jobs.findMany()
+        const jobs = await prisma.jobs.findMany({
+            orderBy : {
+                jobPostedDate : 'desc'
+            }
+        })
         if(jobs){
             return NextResponse.json({
                 jobs : jobs
