@@ -6,7 +6,8 @@ export async function GET(req : NextRequest, context: { params: Promise<{ id: st
         const  { id }  = await context.params;
         const job = await prisma.jobs.findUnique({
             where : {
-                id
+                id,
+                isDeleted : false
             }
         })
         if(job){

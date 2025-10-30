@@ -4,6 +4,9 @@ import prisma from "@/lib/prisma";
 export async function GET(){
     try{
         const news = await prisma.news.findMany({
+            where : {
+                isDeleted : false
+            },
             orderBy :{
                 newsPostedDate : 'desc'
             }
@@ -47,5 +50,30 @@ export async function POST(req : NextRequest){
         },{ 
             status: 500 
         });
+    }
+}
+
+export async function PATCH(req : NextRequest){
+    try{
+        const data = await req.json();
+        await prisma.news.update({
+            data : {
+                isDeleted : true
+            },
+            where : {
+                id : data.id
+            }
+        })
+        return NextResponse.json({
+            message : "News deleted successfully!"
+        })
+    }
+    catch(e){
+        console.log(e)
+        return NextResponse.json({
+            message : "Somethings went wrong!"
+        },{
+            status : 500
+        })
     }
 }
