@@ -62,6 +62,13 @@ export default function NewJob() {
                 jobDescription,
                 jobTags,
             })
+            if(res.status != 200){
+                toast.warning(res.data.message)
+                setTimeout(()=>{
+                    window.location.href='/admin/login'
+                },1000)
+                return;
+            }
             toast.success(res.data.message || "Job posted successfully!")
             setJobTitle("")
             setJobDescription([])

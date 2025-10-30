@@ -46,6 +46,13 @@ export default function NewNews() {
                 newsAuthor,
                 newsAuthorDesignation,
             })
+            if(response.status != 200){
+                toast.warning(response.data.message)
+                setTimeout(()=>{
+                    window.location.href='/admin/login'
+                },1000)
+                return;
+            }
             toast.success(response.data.message || "Blog published successfully!")
             setNewsAuthor("")
             setNewsAuthorDesignation("")

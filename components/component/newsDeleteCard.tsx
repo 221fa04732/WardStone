@@ -23,9 +23,16 @@ export default function NewsDeleteCard({ data }: { data: newsType }){
     const deleteNews = async()=>{
         setLoading(true)
         try{
-            await axios.patch(`/api/news`,{
+            const response = await axios.patch(`/api/news`,{
                 id : data.id
             })
+            if(response.status != 200){
+                toast.warning(response.data.message)
+                setTimeout(()=>{
+                    window.location.href='/admin/login'
+                },1000)
+                return;
+            }
             window.location.reload()
         }
         catch(e){
