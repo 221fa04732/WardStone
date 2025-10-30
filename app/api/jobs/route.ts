@@ -114,3 +114,49 @@ export async function PATCH(req : NextRequest){
         })
     }
 }
+
+export async function PUT(req : NextRequest){
+    try{
+        try{
+            const cookies = req.cookies;
+            const token = cookies.get("token")?.value;
+            const verify = jwt.verify(token as string, process.env.JWT_SECRET as string) as {password : string, secret : string};
+            if(token === "" || verify.password != process.env.ADMIN_PASSWORD || verify.secret != process.env.ADMIN_SECRET){
+                return NextResponse.json({
+                    message : "Invalid token"
+                },{
+                    status : 201
+                })
+            }
+        }
+        catch(e){
+            return NextResponse.json({
+                message : "Access Denied"
+            },{
+                status : 201
+            })
+        }
+        
+        const data = await req.json();
+        await prisma.jobs.update({
+            data : {
+                jobTitle : data.jobTitle,
+                jobDescription : data.jobDescription,
+                jobTags : data.jobTags
+            },
+            where : {
+                id : data.id
+            }
+        })
+        return NextResponse.json({
+            message : "Job updated successfully!"
+        })
+    }
+    catch(e){
+        return NextResponse.json({
+            message : "Somethings went wrong!"
+        },{
+            status : 500
+        })
+    }
+}
