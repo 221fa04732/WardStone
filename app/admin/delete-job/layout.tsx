@@ -23,11 +23,11 @@ const inter = Inter({
 
 
 export const metadata: Metadata = {
-    title: "WARDSTONE - Delete news",
+    title: "WARDSTONE - Delete job",
     description: "Next-generation Space Defense Technology",
 };
 
-export default function DeleteNewsLayout({
+export default function DeleteJobLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
