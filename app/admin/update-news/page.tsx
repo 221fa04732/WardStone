@@ -2,14 +2,14 @@
 
 import { useState, useEffect } from "react"
 import axios from "axios"
-import NewsDeleteCard from "@/components/component/newsDeleteCard"
+import NewsUpdateCard from "@/components/component/newsUpdateCard"
 import Loading from "@/components/component/loading"
 import Error from "@/components/component/error"
 import { User } from "lucide-react"
 import Link from "next/link"
 import { newsType } from "@/components/component/newsPost"
 
-export default function DeleteNews(){
+export default function UpdateNews(){
 
     const [news, setNews] = useState<newsType[]>([])
     const [loading, setLoading] = useState<Boolean>(true)
@@ -45,7 +45,7 @@ export default function DeleteNews(){
         </Link>
         <div className="w-full my-24 flex flex-col justify-center items-center gap-6">
             {news && news.length > 0 ? news.map((item : newsType, index : number)=>(
-                <NewsDeleteCard key={index} data={item}/>
+                <NewsUpdateCard key={index} data={item}/>
             )) : <div className="w-full h-full flex justify-center items-center">No news at the moment. Stay tuned!</div>}
         </div>
     </div>)

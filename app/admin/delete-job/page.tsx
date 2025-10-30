@@ -9,7 +9,7 @@ import { User } from "lucide-react"
 import Link from "next/link"
 import { jobType } from "@/components/component/jobPost"
 
-export default function NewsPost(){
+export default function DeleteJob(){
 
     const [job, setJob] = useState<jobType[]>([])
     const [loading, setLoading] = useState<Boolean>(true)
