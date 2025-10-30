@@ -14,6 +14,7 @@ model Jobs{
   jobDescription String[]
   jobTags String[]
   jobPostedDate DateTime @default(now())
+  isDeleted Boolean @default(false)
 }
 
 model News{
@@ -23,4 +24,5 @@ model News{
   newsAuthor String
   newsAuthorDesignation String
   newsPostedDate DateTime @default(now())
+  isDeleted Boolean @default(false)
 }
